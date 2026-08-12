@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connections</title>
+  <link rel="icon" href="data:,">
+  <script>
+    // The floating webview starts independently, so it needs the same early
+    // validated cache as the main page to avoid flashing the wrong theme.
+    const savedTheme = localStorage.getItem('app-theme');
+    const initialTheme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'dark';
+    document.documentElement.setAttribute('data-theme', initialTheme);
+    document.documentElement.style.colorScheme = initialTheme;
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/floating-main.ts"></script>
+</body>
+</html>

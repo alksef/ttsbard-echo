@@ -1,0 +1,31 @@
+/* Shared TTSBard-compatible semantic tokens. Echo-specific values live at the end. */
+@import './variables/base/index.css';
+
+[data-theme='light'] {
+  --rgb-bg: 250, 252, 255;
+  --rgb-bg-elevated: 255, 255, 255;
+  --rgb-text: 15, 23, 42;
+  --rgb-text-secondary: 71, 85, 105;
+  --rgb-text-muted: 100, 116, 139;
+  --rgb-accent: 59, 130, 246;
+  --rgb-accent-strong: 37, 99, 235;
+  --rgb-success: 22, 163, 74;
+  --rgb-warning: 180, 83, 9;
+  --rgb-danger: 220, 38, 38;
+  --rgb-info: 37, 99, 235;
+  --rgb-border: 15, 23, 42;
+  --rgb-contrast: 0, 0, 0;
+  --input-bg-strong: rgb(var(--rgb-bg-elevated));
+  --color-bg-field: rgba(var(--rgb-accent), .05);
+  --color-bg-field-hover: rgba(var(--rgb-accent), .1);
+  --color-bg-panel: rgba(var(--rgb-bg-elevated), .9);
+  --shadow-soft: 0 12px 32px rgba(var(--rgb-black), .1);
+  --modal-overlay: rgba(var(--rgb-black), .4);
+}
+
+/* Echo shell tokens. Keep these separate from the reference semantic palette. */
+:root {
+  --echo-titlebar-height: 36px;
+  --echo-sidebar-expanded: 180px;
+  --echo-sidebar-collapsed: 64px;
+}

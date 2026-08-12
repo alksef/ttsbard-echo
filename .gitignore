@@ -1,0 +1,51 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+.vite/
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Rust / Tauri
+src-tauri/target
+Cargo.lock
+# Local build config (per-machine: CargoTargetDir on E:, RustBinDir). See
+# scripts/build.local.example.psd1 for the template.
+scripts/build.local.psd1
+
+# Temporary files
+.work/
+nul
+notes/note-run-claude.txt
+
+images
+docs/ideas
+docs/images
+docs/reviews
+docs/works
+notes/
+promts/
+.scripts/
+scripts/build-debug.bat
+scripts/build-release.bat
+scripts/build.local.example.psd1
+scripts/build.ps1
+scripts/cargo.ps1

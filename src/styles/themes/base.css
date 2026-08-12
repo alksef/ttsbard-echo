@@ -1,0 +1,11 @@
+/* ============================================================================
+   Base CSS Variables for Themes - ttsbard-echo
+   ============================================================================ */
+
+/* Import the existing variable definitions */
+@import '../variables/base/index.css';
+
+/* Light theme override definitions (these can be overridden in light theme) */
+[data-theme='light'] {
+  /* This will be populated with theme-specific overrides */
+}

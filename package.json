@@ -1,0 +1,27 @@
+{
+  "name": "ttsbard-echo",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "version": "node scripts/set-version.cjs",
+    "tauri": "tauri",
+    "test": "node scripts/contract-checker.js all",
+    "check:ipc": "node scripts/contract-checker.js ipc",
+    "check:settings": "node scripts/contract-checker.js settings"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2",
+    "lucide-vue-next": "^0.577.0",
+    "vue": "^3.5.30"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@vitejs/plugin-vue": "^6.0.4",
+    "typescript": "~5.9.3",
+    "vite": "^8.0.0",
+    "vue-tsc": "^3.2.5"
+  }
+}

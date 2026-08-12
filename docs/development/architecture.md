@@ -1,0 +1,76 @@
+# Application Architecture
+
+## Overview
+
+This document describes the technical architecture of the TTS Bard Echo application, focusing on the structure and integration patterns aligned with app-tts-v2 standards.
+
+## System Components
+
+### Frontend (Vue.js)
+- Single Page Application built with Vue 3
+- Composition API for composable logic
+- Tauri integration for system-level capabilities  
+- Component-based UI architecture with CSS token system
+
+### Backend (Rust/Tauri)
+- Cross-platform desktop application using Tauri framework
+- Event-driven architecture using Rust event system
+- Connection management for external services  
+- SSE client implementation for real-time communication
+
+### Data Flow
+1. User interactions in frontend
+2. Events sent to backend via Tauri API
+3. Backend processes events and manages connections
+4. External service responses received (via SSE)
+5. Responses converted to events and sent back to frontend
+
+## Integration Points
+
+### Server-Sent Events (SSE) 
+- Client implementation in Rust (`src-tauri/src/connections/client.rs`)
+- Message handling via Tauri events system (`AppEvent::MessageReceived`)  
+- Frontend processing via Vue composables (`useSSEHandler.ts`)
+
+### Connection Management
+- Connection configuration and lifecycle management
+- Authentication token handling 
+- Retry logic with exponential backoff
+
+## CSS Architecture
+
+Modern modular CSS architecture:
+- Token-based theming system (src/styles/variables/)
+- Component-specific styling with CSS variables
+- Consistent design patterns aligned with app-tts-v2
+
+## File Structure Organization
+
+```
+src/
+├── components/          # UI Components
+├── composables/         # Vue Composition API logic  
+├── connections/         # Connection and integration logic
+├── styles/              # CSS and theme files
+├── types/               # TypeScript type definitions
+└── utils/               # Utility functions
+
+docs/ 
+├── user/                # User documentation
+├── development/         # Developer guides
+└── integrations/        # Integration documents
+```
+
+## Design Patterns
+
+### Component Architecture
+- Reusable UI components following app-tts-v2 pattern
+- Consistent styling through CSS token system
+- Type-safe component interfaces
+
+### Event System  
+- Tauri-based event communication between frontend and backend
+- Custom AppEvent enum for typed events
+- Easy extensibility for new event types
+
+This architecture provides a foundation for extensible, maintainable application with clear separation of concerns and alignment to app-tts-v2 standards.

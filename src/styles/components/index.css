@@ -1,0 +1,81 @@
+/* ============================================================================
+   Components - ttsbard-echo
+   ============================================================================ */
+
+/* Button Styles */
+.btn {
+  font-family: var(--font-sans);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: var(--btn-accent-bg);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--btn-accent-bg-hover);
+}
+
+/* Form Elements */
+.form-input {
+  background: var(--color-bg-field);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 10px;
+  width: 100%;
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--focus-glow);
+}
+
+/* Sidebar */
+.sidebar {
+  background: var(--sidebar-bg-top);
+  background: var(--sidebar-bg-bottom);
+  width: 260px;
+}
+
+/* Card component */
+.card {
+  background: var(--color-bg-panel);
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-border);
+  padding: 16px;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-accent-glow);
+}
+
+/* Panel component */
+.panel {
+  background: var(--color-bg-panel);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+/* Status indicator styles */
+.status-connected {
+  color: var(--status-connected);
+  text-shadow: var(--status-connected-glow);
+}
+
+.status-disconnected {
+  color: var(--status-disconnected);
+  text-shadow: var(--status-disconnected-glow);
+}

@@ -1,0 +1,134 @@
+/* ============================================================================
+   Gradients - ttsbard-echo
+   ============================================================================ */
+
+/* ==========================================================================
+   App Background Gradients
+   ========================================================================== */
+:root {
+  --app-gradient-bg: linear-gradient(135deg,
+    var(--color-bg) 0%,
+    color-mix(in srgb, var(--color-bg) 85%, var(--color-accent)) 50%,
+    var(--color-bg) 100%
+  );
+
+  --app-gradient-glow: radial-gradient(ellipse at center,
+    color-mix(in srgb, var(--color-accent) 15%, transparent) 0%,
+    transparent 70%
+  );
+
+  --app-gradient-line: linear-gradient(90deg,
+    transparent 0%,
+    var(--color-accent) 50%,
+    transparent 100%
+  );
+
+  /* ==========================================================================
+     Grid Pattern
+     ========================================================================== */
+  --grid-pattern:
+    linear-gradient(var(--color-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+
+  /* ==========================================================================
+     Button Gradients
+     ========================================================================== */
+  --btn-accent-gradient: linear-gradient(135deg,
+    var(--color-accent) 0%,
+    var(--color-accent-strong) 100%
+  );
+
+  --btn-neutral-gradient: linear-gradient(135deg,
+    var(--color-bg-elevated) 0%,
+    var(--color-bg-panel) 100%
+  );
+
+  /* ==========================================================================
+     Status Gradients
+     ========================================================================== */
+  --success-gradient: linear-gradient(135deg,
+    var(--color-success) 0%,
+    color-mix(in srgb, var(--color-success) 80%, var(--color-bg)) 100%
+  );
+
+  --danger-gradient: linear-gradient(135deg,
+    var(--color-danger) 0%,
+    color-mix(in srgb, var(--color-danger) 80%, var(--color-bg)) 100%
+  );
+
+  --warning-gradient: linear-gradient(135deg,
+    var(--color-warning) 0%,
+    color-mix(in srgb, var(--color-warning) 80%, var(--color-bg)) 100%
+  );
+
+  --info-gradient: linear-gradient(135deg,
+    var(--color-info) 0%,
+    color-mix(in srgb, var(--color-info) 80%, var(--color-bg)) 100%
+  );
+
+  /* ==========================================================================
+     Glow Effects
+     ========================================================================== */
+  --glow-accent: radial-gradient(circle,
+    color-mix(in srgb, var(--color-accent) 30%, transparent) 0%,
+    transparent 70%
+  );
+
+  --glow-success: radial-gradient(circle,
+    color-mix(in srgb, var(--color-success) 30%, transparent) 0%,
+    transparent 70%
+  );
+
+  --glow-danger: radial-gradient(circle,
+    color-mix(in srgb, var(--color-danger) 30%, transparent) 0%,
+    transparent 70%
+  );
+
+  /* ==========================================================================
+     Fallback for browsers without color-mix() support
+     ========================================================================== */
+  --app-gradient-bg-fallback: linear-gradient(135deg,
+    var(--color-bg) 0%,
+    rgba(var(--rgb-accent), 0.08) 50%,
+    var(--color-bg) 100%
+  );
+}
+
+/* ==========================================================================
+   Sidebar Gradient
+   ========================================================================== */
+.sidebar-gradient {
+  background: linear-gradient(180deg,
+    var(--sidebar-bg-top) 0%,
+    var(--sidebar-bg-bottom) 100%
+  );
+}
+
+/* ==========================================================================
+   Indicator Gradient
+   ========================================================================== */
+.indicator-gradient {
+  background: linear-gradient(90deg,
+    var(--indicator-gradient-start) 0%,
+    var(--indicator-gradient-end) 100%
+  );
+}
+
+/* ==========================================================================
+   Card Hover Gradient
+   ========================================================================== */
+.card-hover-gradient {
+  background: linear-gradient(135deg,
+    var(--color-bg-overlay) 0%,
+    var(--color-bg-overlay-soft) 100%
+  );
+}
+
+/* ==========================================================================
+   Fallback support for older browsers
+   ========================================================================== */
+@supports not (color-mix(in srgb, red 50%, blue)) {
+  :root {
+    --app-gradient-bg: var(--app-gradient-bg-fallback);
+  }
+}

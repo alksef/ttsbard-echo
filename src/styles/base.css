@@ -1,0 +1,137 @@
+/* ============================================================================
+   Base Styles - ttsbard-echo
+   ============================================================================ */
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   HTML & Body
+   ========================================================================== */
+html {
+  background: var(--color-bg);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background:
+    radial-gradient(circle at top left, var(--color-accent-soft), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(255, 162, 67, 0.08), transparent 22%),
+    var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+#app {
+  width: 100%;
+  height: 100vh;
+}
+
+/* ==========================================================================
+   Form Elements
+   ========================================================================== */
+button {
+  font-family: inherit;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* ==========================================================================
+   Selection
+   ========================================================================== */
+::selection {
+  background: var(--focus-glow);
+}
+
+/* ==========================================================================
+   Scrollbar Styling
+   ========================================================================== */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--color-bg-overlay);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-weak);
+}
+
+/* ==========================================================================
+   Focus Styles
+   ========================================================================== */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Text Utilities
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent-strong);
+}
+
+/* ==========================================================================
+   List Utilities
+   ========================================================================== */
+ul, ol {
+  list-style: none;
+}
+
+/* ==========================================================================
+   Image Utilities
+   ========================================================================== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   Button Reset
+   ========================================================================== */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

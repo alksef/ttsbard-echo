@@ -1,0 +1,56 @@
+# Set default behavior to automatically normalize line endings
+* text=auto eol=lf
+
+# Set the default behavior for binary files
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.bmp binary
+*.ico binary
+*.eot binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.svg binary
+*.pdf binary
+*.doc binary
+*.xls binary
+*.ppt binary
+*.mp4 binary
+*.mov binary
+*.wmv binary
+*.mp3 binary
+*.wav binary
+*.zip binary
+*.rar binary
+*.7z binary
+*.tar binary
+*.gz binary
+*.dmg binary
+
+# Force text encoding for specific file types
+*.ts text eol=lf
+*.vue text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Git LFS for large files
+*.mov filter=lfs
+*.mp4 filter=lfs
+*.wmv filter=lfs
+*.mp3 filter=lfs
+*.wav filter=lfs
+*.zip filter=lfs
+*.rar filter=lfs
+*.7z filter=lfs
+*.tar filter=lfs
+*.gz filter=lfs
+
+# IDE specific
+.idea/ export-subst
+.vscode/ export-subst

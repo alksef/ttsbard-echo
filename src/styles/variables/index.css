@@ -1,0 +1,32 @@
+/* ============================================================================
+   CSS Variables - ttsbard-echo (imported from app-tts-v2 style system)
+   ============================================================================ */
+
+@import './base/index.css';
+
+/* Light theme variant */
+[data-theme="light"] {
+  /* RGB Colors - Light Theme */
+  --rgb-bg: 250, 252, 255;
+  --rgb-bg-elevated: 255, 255, 255;
+  --rgb-text: 15, 23, 42;
+  --rgb-text-secondary: 71, 85, 105;
+  --rgb-text-muted: 148, 163, 184;
+  --rgb-accent: 59, 130, 246;
+  --rgb-accent-strong: 37, 99, 235;
+  --rgb-success: 34, 197, 94;
+  --rgb-warning: 217, 119, 6;
+  --warning-text-bright: #9a3412;
+  --rgb-danger: 239, 68, 68;
+  --rgb-info: 59, 130, 246;
+  --rgb-border: 15, 23, 42;
+  --rgb-contrast: 0, 0, 0;
+
+  /* Adjustments for light mode */
+  --input-bg-strong: #ffffff;
+  --color-bg-field: rgba(var(--rgb-accent), 0.04);
+  --color-bg-field-hover: rgba(var(--rgb-accent), 0.08);
+  --color-bg-panel: rgba(255, 255, 255, 0.88);
+  --shadow-soft: 0 12px 32px rgba(var(--rgb-black), 0.08);
+  --modal-overlay: rgba(var(--rgb-black), 0.4);
+}

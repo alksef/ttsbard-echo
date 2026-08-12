@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/app-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ttsbard-echo</title>
+    <script>
+      // Apply a validated cache before Vue loads to prevent a theme flash.
+      const savedTheme = localStorage.getItem('app-theme');
+      const initialTheme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'dark';
+      document.documentElement.setAttribute('data-theme', initialTheme);
+      document.documentElement.style.colorScheme = initialTheme;
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
