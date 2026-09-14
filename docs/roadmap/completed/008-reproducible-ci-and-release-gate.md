@@ -1,6 +1,7 @@
 # 008 — Воспроизводимый CI и release gate
 
-- **Статус:** active, реализация в рабочем дереве
+- **Статус:** completed
+- **Дата:** 2026-09-14
 - **Приоритет:** P0
 - **Зависимости:** нет
 - **Блокирует:** 009, 010, 011, 013
@@ -56,6 +57,48 @@
 - успешный push-run GitHub Actions;
 - ручной `workflow_dispatch`;
 - тестовый release tag после завершения остальных проверок.
+
+## Completion note
+
+Выполнено 2026-09-14, все проверки зелёные в удалённом CI.
+
+Проверки:
+
+- Локально: `npm test`, `npm run build`, `cargo fmt --check`,
+  `cargo clippy --locked -D warnings`, `cargo test --locked` (43 теста),
+  `npm run tauri -- build --debug` (MSI + NSIS).
+- Push-CI для `fade947`, все 5 джоб зелёные:
+  [run 34858562241](https://github.com/alksef/ttsbard-echo/actions/runs/34858562241).
+- Ручной `workflow_dispatch` `ci.yml` — success:
+  [run 34859298306](https://github.com/alksef/ttsbard-echo/actions/runs/34859298306);
+  повторный dispatch отменил устаревший
+  [run 34859206272](https://github.com/alksef/ttsbard-echo/actions/runs/34859206272)
+  (conclusion `cancelled`).
+- Ручной `workflow_dispatch` `build.yml` собрал артефакты с версией из
+  репозитория и не создал release (release-джоба пропущена):
+  [run 34857516466](https://github.com/alksef/ttsbard-echo/actions/runs/34857516466).
+- Тег `v0.1.1` на проверенном commit: release-джоба `wait-for-ci` дождалась
+  зелёного push-CI того же SHA, собраны Windows-артефакты и опубликован
+  prerelease [v0.1.1](https://github.com/alksef/ttsbard-echo/releases/tag/v0.1.1)
+  ([run 34859506448](https://github.com/alksef/ttsbard-echo/actions/runs/34859506448)).
+  Версия артефактов 0.1.1 берётся из тега; версия в репозитории остаётся 0.1.0.
+  Это тестовый релиз для проверки gate.
+
+Попутно исправленные дефекты:
+
+- `npm run tauri build --debug` не пробрасывал `--debug` в tauri CLI (npm
+  глотал флаг), из-за чего build-check молча делал release-сборку; заменено на
+  `npm run tauri -- build --debug`.
+- `scripts/set-version.cjs` не обновлял версию локального пакета в
+  `Cargo.lock`, из-за чего `cargo test --locked` в релизном workflow падал бы
+  сразу после применения версии тега; скрипт теперь синхронизирует lockfile.
+- Linux-джобы clippy/test падали: `tauri::generate_context!()` требует
+  существования `frontendDist` на этапе компиляции; перед cargo-командами
+  добавлены `npm ci` + `npm run build`.
+
+Известное ограничение: негативный сценарий «тег на непроверенный commit»
+покрыт конструкцией gate (`wait-for-ci` ждёт только push-run того же SHA и
+падает по таймауту/failure), отдельным тестом не прогонялся.
 
 ## Завершение
 
